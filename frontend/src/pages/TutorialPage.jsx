@@ -11,7 +11,8 @@ const TutorialPage = () => {
   const [error, setError] = useState(null);
 
   // Dynamic URL: Uses environment variable in Production, localhost in Dev
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+  // REPLACE THE URL BELOW WITH YOUR EXACT RENDER URL
+const API_URL = "https://mac-solutions-api.onrender.com";
 
   useEffect(() => {
     setLoading(true);
