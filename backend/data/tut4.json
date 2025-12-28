@@ -1,0 +1,56 @@
+{
+  "tutorial_id": "MAC_TUT_4",
+  "title": "Double Integrals: Tutorial 4",
+  "description": "Evaluation, Change of Order, and Polar Coordinates",
+  "sections": [
+    {
+      "section_title": "1. Direct Evaluation",
+      "problems": [
+        {
+          "id": "1a",
+          "type": "calculation",
+          "question_latex": "\\int_{1}^{\\ln 8}\\int_{0}^{\\ln y}e^{x+y}dx dy",
+          "solution_latex": "8\\ln 8 - 16 + e",
+          [cite_start]"source_ref": "Tut 4, Q1a [cite: 214]"
+        }
+      ]
+    },
+    {
+      "section_title": "2. Change of Order",
+      "problems": [
+        {
+          "id": "2b",
+          "type": "calculation",
+          "question_latex": "\\int_{0}^{2}\\int_{0}^{4-y^{2}}y dx dy",
+          "solution_latex": "4",
+          "solution_steps": [
+            "Sketch region: Parabola $x=4-y^2$ in 1st quadrant.",
+            "New Order: $\\int_0^4 \\int_0^{\\sqrt{4-x}} y dy dx$."
+          ],
+          [cite_start]"source_ref": "Tut 4, Q2b [cite: 226]"
+        },
+        {
+          "id": "3b",
+          "type": "calculation",
+          "question_latex": "\\int_{0}^{2}\\int_{0}^{4-x^{2}}\\frac{xe^{2y}}{4-y}dy dx",
+          "solution_latex": "\\frac{e^8-1}{4}",
+          "notes": "Must change order to $dx dy$ to integrate.",
+          [cite_start]"source_ref": "Tut 4, Q3b [cite: 233]"
+        }
+      ]
+    },
+    {
+      "section_title": "3. Polar Coordinates",
+      "problems": [
+        {
+          "id": "5a",
+          "type": "calculation",
+          "question_latex": "\\int_{-1}^{1}\\int_{-\\sqrt{1-x^{2}}}^{\\sqrt{1-x^{2}}}dy dx",
+          "solution_latex": "\\pi",
+          "notes": "Region is a full unit circle. Area = $\\pi r^2 = \\pi$.",
+          [cite_start]"source_ref": "Tut 4, Q5a [cite: 243]"
+        }
+      ]
+    }
+  ]
+}
