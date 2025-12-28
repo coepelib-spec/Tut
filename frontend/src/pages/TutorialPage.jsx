@@ -10,7 +10,25 @@ const TutorialPage = () => {
 
   useEffect(() => {
     // Fetch data from FastAPI backend
-    axios.get(`http://localhost:8000/api/tutorial/${id}`)
+    const TutorialPage = () => {
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Use environment variable for API URL, fallback to localhost for dev
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
+  useEffect(() => {
+    axios.get(`${API_URL}/api/tutorial/${id}`)
+      .then(res => {
+        setData(res.data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching tutorial:", err);
+        setLoading(false);
+      });
+  }, [id]);
       .then(res => {
         setData(res.data);
         setLoading(false);
