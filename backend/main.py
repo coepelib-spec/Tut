@@ -5,17 +5,21 @@ import os
 
 app = FastAPI()
 
-# Allow the frontend to talk to this backend
+# Allow both localhost (for testing) and your production Vercel app
+# Once deployed, you can replace "*" with your specific Vercel URL for security
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Vite's default port
+    allow_origins=origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.get("/")
 def read_root():
-    return {"message": "MAC Solutions API is running!"}
+    return {"message": "MAC Solutions API is running in the cloud!"}
 
 @app.get("/api/tutorial/{tut_id}")
 def get_tutorial(tut_id: str):
@@ -24,7 +28,9 @@ def get_tutorial(tut_id: str):
     if tut_id not in valid_ids:
         raise HTTPException(status_code=404, detail="Tutorial not found")
     
+    # In production (Render), the path is strictly relative to the root
     file_path = f"data/{tut_id}.json"
+    
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="Data file missing")
         
@@ -34,4 +40,6 @@ def get_tutorial(tut_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Render provides the PORT environment variable
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
