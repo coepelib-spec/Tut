@@ -1,0 +1,53 @@
+{
+  "tutorial_id": "MAC_TUT_5",
+  "title": "Triple Integrals: Tutorial 5",
+  "description": "Volumes, Mass, and 3D Regions",
+  "sections": [
+    {
+      "section_title": "1. Mass & Moments",
+      "problems": [
+        {
+          "id": "1",
+          "type": "calculation",
+          "question_text": "Find mass of plate bounded by $x^2+4y^2=12$ and $x=4y^2$ with $\\delta=5x$.",
+          "solution_latex": "23\\sqrt{3}",
+          "visualization_type": "2d_ellipse_parabola",
+          [cite_start]"source_ref": "Tut 5, Q1 [cite: 271]"
+        },
+        {
+          "id": "2",
+          "type": "calculation",
+          "question_text": "Find Center of Mass for plate bounded by $y=1, y=x^2$ with $\\delta=y+1$.",
+          "solution_latex": "(0, 9/14)",
+          [cite_start]"source_ref": "Tut 5, Q2 [cite: 273]"
+        }
+      ]
+    },
+    {
+      "section_title": "2. Volumes (Triple Integrals)",
+      "problems": [
+        {
+          "id": "5b",
+          "type": "volume",
+          "question_text": "Volume cut from cylinder $x^2+y^2=1$ by planes $z=-y$ and $z=0$.",
+          "solution_latex": "2/3",
+          "visualization_type": "3d_cylinder_wedge",
+          [cite_start]"source_ref": "Tut 5, Q5b [cite: 286]"
+        },
+        {
+          "id": "5c",
+          "type": "volume",
+          "question_text": "Volume common to cylinders $x^2+y^2=1$ and $x^2+z^2=1$ (Steinmetz Solid).",
+          "solution_latex": "16/3",
+          "solution_steps": [
+            "Calculate volume in 1st octant.",
+            "$\\int_0^1 \\int_0^{\\sqrt{1-x^2}} \\sqrt{1-x^2} dy dx = 2/3$.",
+            "Total = $8 \\times 2/3 = 16/3$."
+          ],
+          "visualization_type": "3d_steinmetz_solid",
+          [cite_start]"source_ref": "Tut 5, Q5c [cite: 287]"
+        }
+      ]
+    }
+  ]
+}
