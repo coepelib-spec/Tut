@@ -1,0 +1,72 @@
+{
+  "tutorial_id": "MAC_TUT_2",
+  "title": "Multivariate Calculus: Tutorial 2",
+  "description": "Implicit Differentiation, Chain Rule, and Maxima/Minima",
+  "sections": [
+    {
+      "section_title": "1. Implicit Differentiation",
+      "problems": [
+        {
+          "id": "1",
+          "type": "proof",
+          "question_latex": "\\text{Prove } \\frac{\\partial z}{\\partial x}=-\\frac{F_{x}}{F_{z}}",
+          "solution_steps": [
+            "Differentiate $F(x,y,z)=0$ w.r.t $x$: $F_x + F_z \\frac{\\partial z}{\\partial x} = 0$.",
+            "Solve algebraically for $\\frac{\\partial z}{\\partial x}$."
+          ],
+          [cite_start]"source_ref": "Tut 2, Q1 [cite: 67]"
+        },
+        {
+          "id": "3",
+          "type": "calculation",
+          "question_latex": "\\text{Find } \\frac{\\partial z}{\\partial x} \\text{ at } (1,1,1) \\text{ for } xy+z^{3}x-2yz=0",
+          "solution_latex": "F_x = y+z^3=2, F_z=3z^2x-2y=1 \\implies -2/1 = -2",
+          "answer": "-2",
+          [cite_start]"source_ref": "Tut 2, Q3 [cite: 72]"
+        }
+      ]
+    },
+    {
+      "section_title": "2. Chain Rule",
+      "problems": [
+        {
+          "id": "5a",
+          "type": "calculation",
+          "question_latex": "\\text{Find } dw/dt \\text{ for } w=x^2+y^2, x=\\cos t, y=\\sin t, t=\\pi",
+          "solution_latex": "\\frac{dw}{dt} = 2x(-\\sin t) + 2y(\\cos t) = 0",
+          "answer": "0",
+          [cite_start]"source_ref": "Tut 2, Q5a [cite: 84]"
+        },
+        {
+          "id": "6a",
+          "type": "calculation",
+          "question_latex": "\\text{Find } \\partial z/\\partial u \\text{ for } z=4e^x\\ln y \\text{ at } (2, \\pi/4)",
+          "solution_latex": "\\sqrt{2}(\\ln 2 + 2)",
+          [cite_start]"source_ref": "Tut 2, Q6a [cite: 93]"
+        }
+      ]
+    },
+    {
+      "section_title": "3. Optimization (Maxima & Minima)",
+      "problems": [
+        {
+          "id": "13a",
+          "type": "optimization",
+          "question_latex": "f(x,y)=x^2+xy+y^2+3x-3y+4",
+          "solution_latex": "\\text{Local Minimum at } (-3, 3)",
+          "notes": "Discriminant $D=3 > 0, f_{xx}=2 > 0$.",
+          [cite_start]"source_ref": "Tut 2, Q13a [cite: 140]"
+        },
+        {
+          "id": "13b",
+          "type": "optimization",
+          "question_latex": "f(x,y)=y\\sin x",
+          "solution_latex": "\\text{Saddle Points at } (n\\pi, 0)",
+          "notes": "Discriminant $D < 0$. ",
+          "visualization_type": "3d_saddle_point",
+          [cite_start]"source_ref": "Tut 2, Q13b [cite: 144]"
+        }
+      ]
+    }
+  ]
+}
